@@ -38,7 +38,7 @@ public class FreeCam : Spatial
         InputVector = InputVector.Normalized();
         if (!Input.IsActionPressed("rotate_camera"))
         {
-            Input.SetMouseMode(Input.MouseMode.Visible);
+            Input.MouseMode = Input.MouseModeEnum.Visible;
         }
 
         // Movement
@@ -63,7 +63,7 @@ public class FreeCam : Spatial
                 Rotate(Vector3.Up, horizontalAngle);
                 if (horizontalAngle != 0 || verticalAngle != 0)
                 {
-                    Input.SetMouseMode(Input.MouseMode.Captured);
+                    Input.MouseMode = Input.MouseModeEnum.Captured;
                 }
             }
         }
